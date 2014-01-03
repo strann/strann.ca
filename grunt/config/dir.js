@@ -4,7 +4,7 @@ var paths = {
 };
 
 module.exports = {
-  external: paths.src + '/external',
+  external: 'external',
   src: paths.src,
   cssSrc: paths.src + '/css',
   jsSrc: paths.src + '/js',

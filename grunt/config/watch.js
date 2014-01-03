@@ -50,12 +50,12 @@ module.exports = {
   },
   jekyll: {
     files: [
-      '<%= dirs.src =>/**/*.html',
-      '<%= dirs.src =>/**/*.md',
-      '<%= dirs.src =>/**/*.markdown'
+      '<%= dir.src %>/**/*.html',
+      '<%= dir.src %>/**/*.md',
+      '<%= dir.src %>/**/*.markdown'
     ],
     tasks: [
       'jekyll:dist'
     ]
-  }
+  },
 };

@@ -1,6 +1,7 @@
 source: ./src
 destination: ./dist
-exclude: ['external', 'scss', 'js']
+exclude: ['external', 'scss', 'js', '*.css']
+include: ['*.min.css', '*.min.js']
 
 title: 'Stuart Trann, a Front End Developer from Vancouver, BC'
 markdown: redcarpet
