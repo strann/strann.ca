@@ -1,6 +1,6 @@
 var paths = {
-  src: '/src',
-  dist: '/dist'
+  src: 'src',
+  dist: 'dist'
 };
 
 module.exports = {

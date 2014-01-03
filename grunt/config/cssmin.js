@@ -1,17 +1,16 @@
 module.exports = {
-  minify: {
+  combine: {
     options: {
       banner: '<%= banner.banner %>',
       report: 'gzip'
     },
     expand: true,
-    cwd: '<%= dir.cssSrc %>',
-    src: [
-      '<%= pkg.name %>.css',
-      '*.css',
-      '!*.min.css'
-    ],
-    dest: '<%= dir.cssSrc %>',
-    ext: '.min.css'
+    files: {
+      '<%= dir.cssSrc %>/<%= pkg.name %>.min.css': [
+        '<%= dir.external %>/normalize-css/normalize.css',
+        '<%= dir.cssSrc %>/<%= pkg.name %>.css',
+        '<%= dir.cssSrc %>/syntax.css'
+      ]
+    }
   }
 };
