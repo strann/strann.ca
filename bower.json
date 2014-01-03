@@ -1,0 +1,9 @@
+{
+  "name": "strann.ca",
+  "version": "0.1.0",
+  "dependencies": {
+    "modernizr": "~2.7.1",
+    "jquery": "~2.0.3",
+    "normalize-css": "~2.1.3"
+  }
+}
