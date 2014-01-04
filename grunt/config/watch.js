@@ -56,6 +56,9 @@ module.exports = {
     ],
     tasks: [
       'jekyll:dist'
-    ]
+    ],
+    options: {
+      livereload: true
+    }
   },
 };
