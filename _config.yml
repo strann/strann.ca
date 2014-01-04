@@ -3,6 +3,7 @@ destination: ./dist
 exclude: ['external', 'scss', 'js', '*.css']
 include: ['*.min.css', '*.min.js']
 
+name: 'strann.ca'
 title: 'Stuart Trann, a Front End Developer from Vancouver, BC'
 markdown: redcarpet
 paginate: 1

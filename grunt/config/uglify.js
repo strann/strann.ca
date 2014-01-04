@@ -4,8 +4,9 @@ module.exports = {
   },
   dist: {
     files: {
-      '<%= dir.jsDist %>/<%= util.slugify(pkg.name) %>.min.js': [
+      '<%= dir.jsSrc %>/<%= pkg.name %>.min.js': [
         '<%= dir.external %>/jquery/jquery.js',
+        '!<%= dir.jsSrc %>/**/*.min.js',
         '<%= dir.jsSrc %>/**/*.js'
       ]
     },
