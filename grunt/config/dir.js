@@ -1,6 +1,4 @@
 module.exports = function(grunt){
-  var _s = require('underscore.string');
-
   var tree = grunt.file.expand({
     filter: 'isDirectory'
   },
@@ -27,7 +25,7 @@ module.exports = function(grunt){
       // strip out all commas and dashes
       .replace(/[\,\-]/g, '');
 
-    return string
+    return string;
   };
 
   for (var i = tree.length - 1; i >= 0; i--) {
@@ -36,7 +34,7 @@ module.exports = function(grunt){
     dirs = currPath.match(/([^\/]+)/g);
     var taskId = createTaskId(dirs.toString());
     dirMap[taskId] = path;
-  };
+  }
 
   grunt.config('dir', dirMap);
 };

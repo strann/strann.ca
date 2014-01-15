@@ -9,7 +9,7 @@ module.exports = function(grunt){
       src: [
         '**/*.{png, jpg, gif}'
       ],
-      dest: '<%= dir.distImg %>'
+      dest: '<%= dir.srcImg %>'
     }],
   });
 };
