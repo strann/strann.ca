@@ -7,7 +7,7 @@ module.exports = function(grunt){
       ],
       tasks: [
         'compass',
-        'concat:css',
+        'autoprefixer',
         'cssmin'
       ],
       options: {
@@ -25,7 +25,7 @@ module.exports = function(grunt){
       },
     },
     images: {
-      files: ['<%= dir.imgSrc %>/**/*'],
+      files: ['<%= dir.srcImg %>/**/*'],
       tasks: [
         'copy:images'
       ],
@@ -34,7 +34,7 @@ module.exports = function(grunt){
       }
     },
     fonts: {
-      files: ['<%= dir.fontsSrc %>/**/*'],
+      files: ['<%= dir.srcFonts %>/**/*'],
       tasks: [
         'copy:fonts'
       ],

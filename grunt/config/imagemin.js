@@ -5,11 +5,11 @@ module.exports = function(grunt){
     },
     files: [{
       expand: true,
-      cwd: '<%= dir.imgSrc %>',
+      cwd: '<%= dir.srcImg %>',
       src: [
         '**/*.{png, jpg, gif}'
       ],
-      dest: '<%= dir.imgDist %>'
+      dest: '<%= dir.distImg %>'
     }],
   });
 };

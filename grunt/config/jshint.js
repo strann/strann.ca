@@ -9,7 +9,7 @@ module.exports = function(grunt){
       'grunt/config/*.js'
     ],
     src: [
-      '<%= dir.jsSrc %>/**/*.js'
+      '<%= dir.srcJs %>/**/*.js'
     ]
   });
 };

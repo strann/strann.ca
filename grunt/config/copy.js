@@ -6,7 +6,7 @@ module.exports = function(grunt){
         flatten: true,
         cwd: '<%= dir.external %>',
         src: 'modernizr/modernizr.js',
-        dest: '<%= dir.jsSrc %>'
+        dest: '<%= dir.srcJs %>'
       }],
     },
   });

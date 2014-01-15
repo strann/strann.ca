@@ -6,6 +6,7 @@
   "devDependencies": {
     "bower": "~1.2.8",
     "grunt": "~0.4.2",
+    "grunt-autoprefixer": "~0.6.4",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-compass": "~0.7.0",
@@ -19,7 +20,6 @@
     "grunt-shell": "~0.6.1",
     "grunt-htmlhint": "~0.4.0",
     "load-grunt-tasks": "~0.2.1",
-    "autoprefixer": "~1.0.20131222",
     "underscore.string": "~2.3.3"
   },
   "repository": {

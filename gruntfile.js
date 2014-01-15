@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function(grunt) {
-
   // Load package.json data
 
   grunt.initConfig({
