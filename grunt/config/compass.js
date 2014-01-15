@@ -1,7 +1,9 @@
-module.exports = {
-  dev: {
-    options: {
-      config: 'config.rb'
+module.exports = function(grunt){
+  grunt.config('compass', {
+    dev: {
+      options: {
+        config: 'config.rb'
+      },
     },
-  },
+  });
 };

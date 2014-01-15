@@ -2,23 +2,36 @@
 
 module.exports = function(grunt) {
 
-  // Load all configuration files with require-grunt-configs
+  // Load package.json data
 
-  var configuration = require('require-grunt-configs')(grunt, 'grunt/config');
+  grunt.initConfig({
+    pkg: require('./package.json'),
+  });
 
-  // Add package.json data to the configuration object
+  // Load all configuration files
 
-  configuration.pkg = grunt.file.readJSON('package.json');
-
-  // Init the /grunt/config files
-
-  grunt.initConfig(configuration);
+  grunt.loadTasks('grunt/config');
 
   // Load installed npm tasks
 
   require('load-grunt-tasks')(grunt);
 
-  // Default task
+  // Register tasks
 
-  grunt.registerTask('default', ['jshint', 'jekyll:serve']);
+  grunt.registerTask('build', [
+    'compass',
+    'cssmin',
+    'jshint',
+    'copy:js',
+    'uglify',
+    'imagemin'
+  ]);
+
+  grunt.registerTask('serve', [
+    'build',
+    'jekyll:serve',
+    'watch'
+  ]);
+
+  grunt.registerTask('default', ['build']);
 };

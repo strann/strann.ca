@@ -9,3 +9,5 @@ Setting up Jekyll was a fairly pleasant experience, I did run into some issues w
 
 So thats that, I now have a platform to build on... more to come.
 
+<p data-height="351" data-theme-id="0" data-slug-hash="phHKt" data-user="estwo" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/estwo/pen/phHKt'>Alphabet soup</a> by Stuart Trann (<a href='http://codepen.io/estwo'>@estwo</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<script async src="//codepen.io/assets/embed/ei.js"></script>
