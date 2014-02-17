@@ -3,10 +3,10 @@ module.exports = function(grunt){
     dev: {
       options: {
         httpPath: '.',
-        sassDir: 'src/scss',
-        cssDir: 'src/css',
-        imagesDir: 'src/img',
-        fontsDir: 'src/fonts',
+        sassDir: '<%= dir.srcScss %>',
+        cssDir: '<%= dir.srcCss %>',
+        imagesDir: '<%= dir.srcImg %>',
+        fontsDir: '<%= dir.srcFonts %>',
       },
     },
   });

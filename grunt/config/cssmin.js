@@ -9,8 +9,8 @@ module.exports = function(grunt){
       files: {
         '<%= dir.srcCss %>/<%= pkg.name %>.min.css': [
           '<%= dir.external %>/normalize-css/normalize.css',
-          '<%= dir.srcCss %>/<%= pkg.name %>.css',
-          '<%= dir.srcCss %>/syntax.css'
+          '<%= dir.srcCss %>/syntax.css',
+          '<%= dir.srcCss %>/<%= pkg.name %>.css'
         ]
       }
     }

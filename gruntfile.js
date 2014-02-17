@@ -21,16 +21,19 @@ module.exports = function(grunt) {
     'compass',
     'autoprefixer',
     'cssmin',
-    'jshint',
-    'copy:js',
     'uglify',
-    'imagemin'
+    'concat',
+    'copy:js'
+  ]);
+
+  grunt.registerTask('strict', [
+    'jshint',
+    'build'
   ]);
 
   grunt.registerTask('serve', [
     'build',
-    'jekyll:serve',
-    'watch'
+    'jekyll:serve'
   ]);
 
   grunt.registerTask('default', ['build']);

@@ -2,7 +2,7 @@ module.exports = function(grunt){
   grunt.config('watch', {
     sass: {
       files: [
-        '<%= dir.src %>/**/*.scss',
+        '<%= dir.srcScss %>/**/*.scss',
         '<%= dir.external %>/**/*.css'
       ],
       tasks: [
@@ -15,32 +15,19 @@ module.exports = function(grunt){
       },
     },
     js: {
-      files: ['<%= dir.src %>/**/*.js'],
+      files: [
+        '<%= dir.srcJs %>/**/*.js',
+        '<%= dir.external %>/**/*.js'
+      ],
       tasks: [
         'jshint:src',
-        'uglify'
+        'uglify',
+        'concat',
+        'copy:js'
       ],
       options: {
         livereload: true
       },
-    },
-    images: {
-      files: ['<%= dir.srcImg %>/**/*'],
-      tasks: [
-        'copy:images'
-      ],
-      options: {
-        livereload: true
-      }
-    },
-    fonts: {
-      files: ['<%= dir.srcFonts %>/**/*'],
-      tasks: [
-        'copy:fonts'
-      ],
-      options: {
-        livereload: true
-      }
     },
     grunt: {
       files: [
