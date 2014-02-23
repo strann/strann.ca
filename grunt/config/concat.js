@@ -1,7 +1,7 @@
 module.exports = function(grunt){
   grunt.config('concat', {
     options: {
-      separator: ";"
+      separator: ';'
     },
     dist: {
       src: [

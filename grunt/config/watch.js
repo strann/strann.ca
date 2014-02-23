@@ -6,7 +6,7 @@ module.exports = function(grunt){
         '<%= dir.external %>/**/*.css'
       ],
       tasks: [
-        'compass',
+        'sass',
         'autoprefixer',
         'cssmin'
       ],

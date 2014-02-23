@@ -4,7 +4,12 @@ title: "Home"
 categories: home
 ---
 
-<h1 class="page_title">Entries</h1>
+<!-- <h1 class="page_title">Entries</h1> -->
+
+<div class="box">
+
+</div>
+
 <ul class="posts">
   {% for post in site.posts %}
     <li class="post_item"><span class="post_date">{{ post.date | date_to_string }}</span> &raquo; <a class="post_link" href="{{ post.url }}">{{ post.title }}</a></li>

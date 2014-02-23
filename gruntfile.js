@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   // Register tasks
 
   grunt.registerTask('build', [
-    'compass',
+    'sass',
     'autoprefixer',
     'cssmin',
     'uglify',

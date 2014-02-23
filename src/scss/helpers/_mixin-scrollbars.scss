@@ -1,0 +1,46 @@
+// WebKit Scrollbar Mixin
+
+@mixin scrollbars(
+  $width: 10px,
+  $color1: rgba(0,0,0,.9),
+  $color2: rgba(0,0,0,.5),
+  $border-radius: 0
+)
+{
+  &::-webkit-scrollbar
+  {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track
+  {
+    @include border-radius($border-radius);
+    background-color: $color2;
+  }
+
+  // &::-webkit-scrollbar-track-piece
+  // {
+
+  // }
+
+  &::-webkit-scrollbar-thumb
+  {
+    @include border-radius($border-radius);
+    background-color: $color1;
+
+    &:window-inactive
+    {
+      background-color: transparentize($color1, .5);
+    }
+  }
+
+  // &::-webkit-scrollbar-corner
+  // {
+
+  // }
+
+  // &::-webkit-resizer
+  // {
+
+  // }
+}

@@ -1,0 +1,14 @@
+module.exports = function(grunt){
+  grunt.config('sass', {
+    dist: {
+      options: {
+        includePaths: [
+          '<%= dir.srcScss %>'
+        ]
+      },
+      files: {
+        '<%= dir.srcCss %>/<%= pkg.name %>.css': '<%= dir.srcScss %>/main.scss'
+      }
+    },
+  });
+};

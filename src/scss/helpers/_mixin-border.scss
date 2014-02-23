@@ -1,0 +1,50 @@
+// Border Mixin
+// Currently only supports solid or dashed borders
+
+@mixin border(
+  $args: null
+)
+{
+  $color: null;
+  $style: solid;
+  $width: 1px;
+  $directions: (); // empty list
+
+  @each $i in $args
+  {
+    @if type-of($i) == color
+    {
+      $color: $i;
+    }
+    @else if type-of($i) == string
+    {
+      @if $i == solid or $i == dashed or $i == dotted
+      {
+        $style: $i;
+      }
+      @else if $i == top or $i == right or $i == bottom or $i == left
+      {
+        $directions: append($directions, $i);
+      }
+    }
+    @else if type-of($i) == number
+    {
+      @if unit($i) == px or unit($i) == em or unit($i) == rem
+      {
+        $width: $i;
+      }
+    }
+  }
+
+  @if length($directions) != 0
+  {
+    @each $i in $directions
+    {
+      border-#{$i}: $width $style $color;
+    }
+  }
+  @else
+  {
+    border: $width $style $color;
+  }
+}

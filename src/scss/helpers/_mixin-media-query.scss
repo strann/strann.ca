@@ -1,0 +1,224 @@
+// Media Query Mixin
+
+// Usage:
+// @include media-query(small0){} - defaults to min-width, reads the variable name without $
+// @include media-query(max-width small0){} - uses max-width
+// @include media-query(min-width small0 max-width large01){} - chains two media queries together
+
+@mixin media-query(
+  $query: ()
+)
+{
+  $breakpoint: ();
+  $media-type: only screen;
+  $media-feature: ();
+  $small00: 480px;
+  $small10: 568px;
+  $medium00: 800px;
+  $large00: 1024px;
+  $large01: 1044px;
+  $large10: 1560px;
+
+  @each $i in $query
+  {
+    // look for our pre-defined breakpoints
+
+    @if type-of($i) == string
+    {
+      // from 0 - 480px (default styles):
+        // iphone 4 portrait
+        // iphone 5 portrait
+        // galaxy s3 portrait
+
+      @if $i == small00
+      {
+        // iphone 4 landscape
+
+        $breakpoint: append($breakpoint, $small00);
+      }
+      @else if $i == small10
+      {
+        // iphone 5 landscape
+        // galaxy s3 landscape
+        // ipad 2/3 portrait
+        // nexus 7 portrait
+
+        $breakpoint: append($breakpoint, $small10);
+      }
+      @else if $i == medium00
+      {
+        // ipad 2/3 landscape
+        // nexus 7 landscape
+
+        $breakpoint: append($breakpoint, $medium00);
+      }
+      @else if $i == large00
+      {
+        // desktop ++
+
+        $breakpoint: append($breakpoint, $large00);
+      }
+      @else if $i == large01
+      {
+        $breakpoint: append($breakpoint, $large01);
+      }
+      @else if $i == large10
+      {
+        $breakpoint: append($breakpoint, $large10);
+      }
+
+      // look for media type
+
+      @else if $i == all
+        or $i == aural
+        or $i == braille
+        or $i == handheld
+        or $i == print
+        or $i == projection
+        or $i == screen
+        or $i == tty
+        or $i == tv
+        or $i == embossed
+      {
+        $media-type: $i;
+      }
+
+      // look for media feature
+
+      @else if $i == width
+        or $i == min-width
+        or $i == max-width
+        or $i == height
+        or $i == min-height
+        or $i == max-height
+      {
+        $media-feature: append($media-feature, $i);
+      }
+    }
+
+    // look for custom breakpoint value
+
+    @else if type-of($i) == number
+    {
+      @if unit($i) == px or unit($i) == em or unit($i) == rem
+      {
+        $breakpoint: append($breakpoint, $i);
+      }
+    }
+  }
+
+  // check if $media-feature is empty, if so then set min-width as default
+
+  @if length($media-feature) == 0
+  {
+    $media-feature: min-width;
+  }
+
+  // output the media query
+
+  // check to see if max-width or height has been defined
+  // if so, take 1px off the $breakpoint value
+  // ie: 800px becomes 799px
+  // this avoids media query overlap ie: min-width 800px & max-width 800px
+
+  @if nth($media-feature, 1) == max-width or nth($media-feature, 1) == max-height
+  {
+    @media #{$media-type} and (nth($media-feature, 1): (nth($breakpoint, 1) - 1))
+    {
+      @content;
+    }
+  }
+
+  // check to see if $media-feature & $breakpoint have more than 1 value, if so then output
+  // a chained media query. currently it only supports 2 queries
+
+  @else if length($media-feature) > 1 and length($breakpoint) > 1
+  {
+    // check first $media-feature value for max-width or max-height, if found - 1px off the $breakpoint value
+
+    @if nth($media-feature, 1) == max-width or nth($media-feature, 1) == max-height
+    {
+      @media #{$media-type} and (nth($media-feature, 1): (nth($breakpoint, 1) - 1)) and (nth($media-feature, 2): nth($breakpoint, 2))
+      {
+        @content;
+      }
+    }
+
+    // check second $media-feature value for max-width or max-height, if found - 1px off the $breakpoint value
+
+    @else if nth($media-feature, 2) == max-width or nth($media-feature, 2) == max-height
+    {
+      @media #{$media-type} and (nth($media-feature, 1): nth($breakpoint, 1)) and (nth($media-feature, 2): (nth($breakpoint, 2) - 1))
+      {
+        @content;
+      }
+    }
+
+    // output the chained media query, not sure if the following case will ever run (chained min-width media query??)
+
+    @else
+    {
+      @media #{$media-type} and (nth($media-feature, 1): nth($breakpoint, 1)) and (nth($media-feature, 2): nth($breakpoint, 2))
+      {
+        @content;
+      }
+    }
+  }
+
+  // otherwise just output a regular media query
+
+  @else
+  {
+    @media #{$media-type} and (nth($media-feature, 1): nth($breakpoint, 1))
+    {
+      @content;
+    }
+  }
+}
+
+// reference: device units
+
+// iphone 4:
+//  portrait:
+//    width: 320
+//    height: 356
+//  landscape:
+//    width: 480
+//    height: 208
+//  devicePixelRatio: 2
+
+// iphone 5:
+//  portrait:
+//    width: 320
+//    height: 444
+//  landscape:
+//    width: 568
+//    height: 320
+//  devicePixelRatio: 2
+
+// galaxy s3:
+//  portrait:
+//    width: 360
+//    height: 567
+//  landscape:
+//    width: 640
+//    height: 287
+//  devicePixelRatio: 2
+
+// nexus 7:
+//  portrait:
+//    width: 600
+//    height: 792
+//  landscape:
+//    width: 960
+//    height: 441
+//  devicePixelRatio: 2
+
+// ipad 3:
+//  portrait:
+//    width: 768
+//    height: 928
+//  landscape:
+//    width: 1024
+//    height: 672
+//  devicePixelRatio: 2
