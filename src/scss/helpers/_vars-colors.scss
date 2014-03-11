@@ -1,3 +1,11 @@
 // Color Variables
 
-$color-00: #fff;
+// Base colors
+
+$white: #fff;
+$black: #111;
+
+// Link colors
+
+$color-link: $black;
+$color-link--hover: lighten($black, 65%);

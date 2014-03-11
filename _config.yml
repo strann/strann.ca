@@ -13,7 +13,6 @@ pygments: true
 permalink: /:categories/:title
 
 author:
-  name: 'Stuart Trann'
   twitter: https://twitter.com/estwo
   github: https://github.com/strann
   flickr: http://flickr.com/estwo
