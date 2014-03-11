@@ -1,5 +1,5 @@
 .box {
-  background-color: #fff;
+  padding: 20px;
   width: 100%; }
 
 
@@ -7,3 +7,14 @@
 
 
 
+a {
+  text-decoration: none; }
+
+ul, ol, dl {
+  margin-top: 0; }
+
+li {
+  list-style: none; }
+
+.box {
+  background-color: #eaeaea; }

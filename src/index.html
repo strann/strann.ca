@@ -10,8 +10,10 @@ categories: home
 
 </div>
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li class="post_item"><span class="post_date">{{ post.date | date_to_string }}</span> &raquo; <a class="post_link" href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+<div class="box">
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li class="post_item"><span class="post_date">{{ post.date | date_to_string }}</span> &raquo; <a class="post_link" href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

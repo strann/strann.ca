@@ -1,6 +1,6 @@
 source: ./src
 destination: ./dist
-exclude: ['external', 'scss', '*.js', '*.css']
+exclude: ['external', 'scss', '*.js', '*.css', '*.patch']
 include: ['*.min.css', 'modernizr.js', '*.min.js']
 
 name: 'strann.ca'
@@ -16,6 +16,8 @@ author:
   name: 'Stuart Trann'
   twitter: https://twitter.com/estwo
   github: https://github.com/strann
+  flickr: http://flickr.com/estwo
+  rdio: http://rdio.com/chillmurray
 
 github:
   repo: https://github.com/strann/strann.ca
