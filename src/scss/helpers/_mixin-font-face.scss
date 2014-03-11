@@ -8,9 +8,9 @@
     $font-name: $font-family
   ) {
   @font-face {
-    font-family: #{$font-family};
+    font-family: $font-family;
     font-style: $font-style;
     font-weight: $font-weight;
-    src: local($font-name), url(#{$font-url}) format('woff');
+    src: local(#{$font-name}), url(#{$font-url}) format('woff');
   }
 }
