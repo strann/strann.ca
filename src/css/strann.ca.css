@@ -85,6 +85,16 @@
   font-weight: 300;
   src: local(Roboto), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/7m8l7TlFO-S3VkhHuR0at7rIa-7acMAeDBVuclsi6Gc.woff) format('woff'); }
 
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.4rem; }
+
 a {
   color: #111;
   text-decoration: none; }
@@ -92,7 +102,8 @@ a {
     color: #b7b7b7; }
 
 ul, ol, dl {
-  margin-top: 0; }
+  margin-top: 0;
+  padding: 0; }
 
 li {
   list-style: none; }
