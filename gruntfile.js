@@ -27,8 +27,9 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('strict', [
-    'jshint',
-    'build'
+    'sass',
+    'csslint',
+    'jshint'
   ]);
 
   grunt.registerTask('serve', [

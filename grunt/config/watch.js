@@ -8,7 +8,8 @@ module.exports = function(grunt){
       tasks: [
         'sass',
         'autoprefixer',
-        'cssmin'
+        'cssmin',
+        'jekyll:dist'
       ],
       options: {
         livereload: true
@@ -23,7 +24,8 @@ module.exports = function(grunt){
         'jshint:src',
         'uglify',
         'concat',
-        'copy:js'
+        'copy:js',
+        'jekyll:dist'
       ],
       options: {
         livereload: true
