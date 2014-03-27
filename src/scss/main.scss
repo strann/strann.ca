@@ -4,6 +4,7 @@
 @import 'helpers/vars-dimensions';
 @import 'helpers/vars-line-styles';
 @import 'helpers/vars-typography';
+@import 'helpers/vars-animation';
 
 // Helpers - Placeholders
 
@@ -19,6 +20,7 @@
 @import 'helpers/mixin-media-query';
 @import 'helpers/mixin-scrollbars';
 @import 'helpers/mixin-shapes';
+@import 'helpers/mixin-shape-menu';
 
 // Base styles
 
@@ -37,6 +39,7 @@
 // Modules
 
 @import 'modules/box';
+@import 'modules/nav';
 @import 'modules/posts';
 
 // Themes
