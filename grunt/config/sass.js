@@ -2,7 +2,7 @@ module.exports = function(grunt){
   grunt.config('sass', {
     dist: {
       options: {
-        includePaths: [
+        loadPath: [
           '<%= dir.srcScss %>'
         ]
       },
