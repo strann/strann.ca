@@ -1,0 +1,19 @@
+.nav {
+  margin: 0;
+}
+
+.nav_link {
+  display: block;
+  padding: $global-padding / 4 0;
+}
+
+.nav--primary {
+  @include shape-menu();
+  height: 0;
+  position: relative;
+  transition: height $global-transition-speed;
+}
+
+.nav_item {
+  visibility: hidden;
+}

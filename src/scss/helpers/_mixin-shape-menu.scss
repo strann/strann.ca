@@ -1,0 +1,37 @@
+@mixin shape-menu(
+  $width: 44px,
+  $height: $width - (($width / 5) * 4),
+  $position-direction: right top,
+  $position-distance: 0,
+  $bar-color: $black,
+  $bar-color-hover: invert($bar-color),
+  $bg-color: $white,
+  $bg-color-hover: invert($bg-color)
+  ) {
+  & {
+    cursor: pointer;
+  }
+
+  &:before {
+    background-color: $bg-color;
+    border-color: $bar-color;
+    border-bottom-style: solid;
+    border-bottom-width: $width / 5;
+    border-top-style: double;
+    border-top-width: $width / 1.666;
+    content: '';
+    height: $height;
+
+    @each $property in $position-direction {
+      #{$property}: $position-distance;
+    }
+
+    position: absolute;
+    width: $width;
+  }
+
+  &:hover:before {
+    background-color: $bg-color-hover;
+    border-color: $bar-color-hover;
+  }
+}
