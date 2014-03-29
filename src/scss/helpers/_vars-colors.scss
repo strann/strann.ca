@@ -5,7 +5,24 @@
 $white: #fff;
 $black: #111;
 
+// Palette
+
+$colors: (
+  grey: (
+    00: lighten($black, 90%),
+    10: lighten($black, 80%),
+    20: lighten($black, 70%),
+    30: lighten($black, 60%),
+    40: lighten($black, 50%),
+    50: lighten($black, 40%),
+    60: lighten($black, 30%),
+    70: lighten($black, 20%),
+    80: lighten($black, 15%),
+    90: lighten($black, 10%)
+  )
+);
+
 // Link colors
 
-$color-link: $black;
-$color-link--hover: lighten($black, 65%);
+$color-link: color(grey, 70);
+$color-link--hover: color(grey, 30);

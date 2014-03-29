@@ -1,3 +1,7 @@
+// Helpers - Functions
+
+@import 'helpers/function-color';
+
 // Helpers - Variables
 
 @import 'helpers/vars-colors';
@@ -32,6 +36,7 @@
 @import 'base/lists';
 @import 'base/tables';
 @import 'base/forms';
+@import 'base/code';
 @import 'base/tabs';
 @import 'base/dropdowns';
 @import 'base/misc-elements';

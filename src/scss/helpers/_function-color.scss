@@ -1,0 +1,4 @@
+@function color($color-group, $variant: 00) {
+  // @todo add tests for $color-group, $variant types
+  @return map-get(map-get($colors, $color-group), $variant);
+}
