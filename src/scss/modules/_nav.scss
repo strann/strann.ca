@@ -8,7 +8,7 @@
 }
 
 .nav--primary {
-  @include shape-menu();
+  @include shape-menu;
   height: 0;
   position: relative;
   transition: height $global-transition-speed;
