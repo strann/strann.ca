@@ -1,0 +1,8 @@
+code {
+  background-color: color(grey);
+  border-radius: $global-border-radius;
+  box-shadow: $global-box-shadow color(grey, 50);
+  display: inline-block;
+  font-family: Inconsolata;
+  padding: $global-padding / 5 $global-padding / 2.5;
+}
