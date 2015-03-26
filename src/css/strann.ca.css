@@ -68,7 +68,6 @@
   font-weight: 300;
   src: local(Roboto), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/7m8l7TlFO-S3VkhHuR0at7rIa-7acMAeDBVuclsi6Gc.woff) format("woff"); }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -79,22 +78,22 @@ body {
   font-size: 1.4rem; }
 
 h1 {
-  margin-top: 0; }
+  margin: 0; }
 
 h2 {
-  margin-top: 0; }
+  margin: 0; }
 
 h3 {
-  margin-top: 0; }
+  margin: 0; }
 
 h4 {
-  margin-top: 0; }
+  margin: 0; }
 
 h5 {
-  margin-top: 0; }
+  margin: 0; }
 
 h6 {
-  margin-top: 0; }
+  margin: 0; }
 
 h1 {
   font-size: 3.8rem;
@@ -159,13 +158,12 @@ code {
 .nav--primary {
   height: 0;
   position: relative;
-  -webkit-transition: height 0.15s;
   transition: height 0.15s; }
   .nav--primary {
     cursor: pointer; }
   .nav--primary:before {
-    background-color: white;
-    border-color: #111111;
+    background-color: #fff;
+    border-color: #111;
     border-bottom-style: solid;
     border-bottom-width: 8.8px;
     border-top-style: double;

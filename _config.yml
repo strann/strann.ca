@@ -8,7 +8,7 @@ title: 'Stuart Trann'
 description: 'a Front End Developer from Vancouver, BC'
 markdown: redcarpet
 paginate: 1
-pygments: true
+highlighter: true
 # permalink: /:year-:month-:day/:title
 permalink: /:categories/:title
 

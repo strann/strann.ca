@@ -5,7 +5,6 @@ module.exports = function(grunt){
     },
     dist: {
       src: [
-        '<%= dir.external %>/jquery/jquery.min.js',
         '<%= dir.srcJs %>/<%= pkg.name %>.min.js'
       ],
       dest: '<%= dir.srcJs %>/<%= pkg.name %>.min.js'

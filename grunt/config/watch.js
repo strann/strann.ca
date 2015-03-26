@@ -9,7 +9,7 @@ module.exports = function(grunt){
         'sass',
         'autoprefixer',
         'cssmin',
-        'jekyll:dist'
+        'shell:jekyllBuild'
       ],
       options: {
         livereload: true
@@ -25,7 +25,7 @@ module.exports = function(grunt){
         'uglify',
         'concat',
         'copy:js',
-        'jekyll:dist'
+        'shell:jekyllBuild'
       ],
       options: {
         livereload: true
@@ -36,7 +36,9 @@ module.exports = function(grunt){
         'gruntfile.js',
         'grunt/**/*.js'
       ],
-      tasks: ['jshint:grunt']
+      tasks: [
+        'jshint:grunt'
+      ]
     },
     jekyll: {
       files: [
@@ -45,7 +47,7 @@ module.exports = function(grunt){
         '<%= dir.src %>/**/*.markdown'
       ],
       tasks: [
-        'jekyll:dist'
+        'shell:jekyllBuild'
       ],
       options: {
         livereload: true

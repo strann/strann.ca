@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', [
     'build',
-    'jekyll:serve'
+    'shell:jekyll'
   ]);
 
   grunt.registerTask('default', ['build']);
