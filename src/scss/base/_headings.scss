@@ -7,37 +7,37 @@
 }
 
 h1 {
-  font-size: $root-heading-font-size;
-  line-height: $root-heading-line-height * 1.1;
-  margin-bottom: $root-heading-margin-bottom;
+  font-size: $global-heading-font-size;
+  line-height: $global-heading-line-height * 1.1;
+  margin-bottom: $global-heading-margin-bottom;
 }
 
 h2 {
-  font-size: $root-heading-font-size / 1.1875;
-  line-height: $root-heading-line-height;
-  margin-bottom: $root-heading-margin-bottom / 1.1875;
+  font-size: $global-heading-font-size / 1.1875;
+  line-height: $global-heading-line-height;
+  margin-bottom: $global-heading-margin-bottom / 1.1875;
 }
 
 h3 {
-  font-size: $root-heading-font-size / 1.5833;
-  line-height: $root-heading-line-height;
-  margin-bottom: $root-heading-margin-bottom / 1.5833;
+  font-size: $global-heading-font-size / 1.5833;
+  line-height: $global-heading-line-height;
+  margin-bottom: $global-heading-margin-bottom / 1.5833;
 }
 
 h4 {
-  font-size: $root-heading-font-size / 2.111;
-  line-height: $root-heading-line-height;
-  margin-bottom: $root-heading-margin-bottom / 2.111;;
+  font-size: $global-heading-font-size / 2.111;
+  line-height: $global-heading-line-height;
+  margin-bottom: $global-heading-margin-bottom / 2.111;;
 }
 
 h5 {
-  font-size: $root-heading-font-size / 2.375;
-  line-height: $root-heading-line-height;
-  margin-bottom: $root-heading-margin-bottom / 2.375;;
+  font-size: $global-heading-font-size / 2.375;
+  line-height: $global-heading-line-height;
+  margin-bottom: $global-heading-margin-bottom / 2.375;;
 }
 
 h6 {
-  font-size: $root-heading-font-size / 2.5333;
-  line-height: $root-heading-line-height;
-  margin-bottom: $root-heading-margin-bottom / 2.5333;
+  font-size: $global-heading-font-size / 2.5333;
+  line-height: $global-heading-line-height;
+  margin-bottom: $global-heading-margin-bottom / 2.5333;
 }

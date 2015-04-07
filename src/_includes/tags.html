@@ -1,0 +1,8 @@
+{% for tag in page.tags %}
+  {% if forloop.first %}
+    {% assign newTag = tag | prepend: 'tag-' %}
+  {% else %}
+    {% assign newTag = tag | prepend: ' tag-' %}
+  {% endif %}
+  {% assign tags = tags | append: newTag %}
+{% endfor %}

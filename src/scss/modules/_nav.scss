@@ -8,10 +8,19 @@
 }
 
 .nav--primary {
-  @include shape-menu;
-  height: 0;
-  position: relative;
+  background-color: color(grey, 40);
+  box-shadow: -8px --8px 8px transparentize($black, .75) inset;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: translateX(-100%);
   transition: height $global-transition-speed;
+  width: 25%;
+
+  .js-nav-primary--is-active {
+    transform: translateX(0);
+  }
 }
 
 .nav_item {

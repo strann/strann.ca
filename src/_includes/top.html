@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/css/{{ site.name }}.min.css">
     <script src="/js/modernizr.js"></script>
   </head>
-  <body class="cat-{{ page.categories | join:' cat-' }} tag-{{ page.tags | join:' tag-' }}">
+  {% include categories.html %}
+  {% include tags.html %}
+  <body class="{{ categories }} {{ tags }}">
+    {% include svg-defs.html %}
+    {% include nav-primary.html %}
     <div class="wrap-outer">
       <div class="wrap-inner">
+        {{ test }}

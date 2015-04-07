@@ -5,15 +5,12 @@
   $color1: rgba(0,0,0,.9),
   $color2: rgba(0,0,0,.5),
   $border-radius: 0
-)
-{
-  &::-webkit-scrollbar
-  {
+) {
+  &::-webkit-scrollbar {
     width: $width;
   }
 
-  &::-webkit-scrollbar-track
-  {
+  &::-webkit-scrollbar-track {
     @include border-radius($border-radius);
     background-color: $color2;
   }
@@ -23,13 +20,11 @@
 
   // }
 
-  &::-webkit-scrollbar-thumb
-  {
+  &::-webkit-scrollbar-thumb {
     @include border-radius($border-radius);
     background-color: $color1;
 
-    &:window-inactive
-    {
+    &:window-inactive {
       background-color: transparentize($color1, .5);
     }
   }

@@ -1,0 +1,8 @@
+{% for category in page.categories %}
+  {% if forloop.first %}
+    {% assign newCat = category | prepend: 'category-' %}
+  {% else %}
+    {% assign newCat = category | prepend: ' category-' %}
+  {% endif %}
+  {% assign categories = categories | append: newCat %}
+{% endfor %}
