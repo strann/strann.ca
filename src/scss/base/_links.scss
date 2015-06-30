@@ -3,6 +3,8 @@
 a {
   color: $color-link;
   text-decoration: none;
+  transition: color $global-transition-duration ease;
+
 
   &:hover {
     color: $color-link--hover;

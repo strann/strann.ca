@@ -1,5 +1,4 @@
 // Border Mixin
-// Currently only supports solid or dashed borders
 
 @mixin border(
   $args: null
@@ -9,16 +8,38 @@
   $width: 1px;
   $directions: (); // empty list
 
+  $border-styles: (
+    dashed,
+    dotted,
+    double,
+    groove,
+    inset,
+    outset,
+    ridge,
+    solid,
+  );
+
+  $border-directions: (
+    top,
+    right,
+    bottom,
+    left
+  );
+
   @each $i in $args {
     @if type-of($i) == color {
       $color: $i;
     }
     @else if type-of($i) == string {
-      @if $i == solid or $i == dashed or $i == dotted {
-        $style: $i;
+      @each $border-direction in $border-directions {
+        @if $i == $border-direction  {
+          $directions: append($directions, $i);
+        }
       }
-      @else if $i == top or $i == right or $i == bottom or $i == left {
-        $directions: append($directions, $i);
+      @each $border-style in $border-styles {
+        @if $i == $border-style  {
+          $style : $i;
+        }
       }
     }
     @else if type-of($i) == number {
@@ -28,11 +49,11 @@
     }
   }
 
-  @if length($directions) != 0 {
-    @each $i in $directions {
-      border-#{$i}: $width $style $color;
-    }
-  } @else {
+  @if length($directions) == 0 {
     border: $width $style $color;
+  } @else {
+    @each $direction in $directions {
+      border-#{$direction}: $width $style $color;
+    }
   }
 }

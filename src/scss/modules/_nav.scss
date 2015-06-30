@@ -1,28 +1,57 @@
 .nav {
   margin: 0;
-}
 
-.nav_link {
-  display: block;
-  padding: $global-padding / 4 0;
-}
+  &--primary {
+    background-color: $black;
+    height: 100%;
+    left: 0;
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform $global-transition-duration ease;
+    width: 50vw;
 
-.nav--primary {
-  background-color: color(grey, 40);
-  box-shadow: -8px --8px 8px transparentize($black, .75) inset;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transform: translateX(-100%);
-  transition: height $global-transition-speed;
-  width: 25%;
+    @media (min-width: 720px) {
+      width: 25vw;
+    }
 
-  .js-nav-primary--is-active {
-    transform: translateX(0);
+    &.js-nav-primary--is-active {
+      transform: translateX(0);
+    }
+  }
+
+  &_icon {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    transform: translate(calc(50vw + #{$global-padding}), $global-padding);
+    transition: transform $global-transition-duration ease;
+
+    @media (min-width: 720px) {
+      transform: translate(calc(25vw + #{$global-padding}), $global-padding);
+    }
+
+    .js-nav-primary--is-active & {
+      transform: translate($global-padding, $global-padding);
+    }
+  }
+
+  &_item {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity ($global-transition-duration * 4) ease;
+
+    .js-nav-primary--is-active & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &_link {
+    display: block;
+    color: $white;
+    padding: $global-padding / 4 $global-padding / 2 $global-padding / 4 $global-padding;
   }
 }
 
-.nav_item {
-  visibility: hidden;
-}

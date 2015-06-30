@@ -18,7 +18,6 @@
 
 @import 'helpers/mixin-font-face';
 @import 'helpers/mixin-border';
-@import 'helpers/mixin-media-query';
 @import 'helpers/mixin-scrollbars';
 
 // Base styles
@@ -40,6 +39,7 @@
 
 // Modules
 
+@import 'modules/wrap';
 @import 'modules/icons';
 @import 'modules/box';
 @import 'modules/nav';

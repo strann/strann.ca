@@ -1,7 +1,13 @@
 .icon {
+  transition: fill $global-transition-duration ease;
+
   &-hamburger {
     fill: $black;
     height: 30px;
     width: 30px;
+
+    .js-nav-primary--is-active & {
+      fill: $white;
+    }
   }
 }

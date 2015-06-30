@@ -1,7 +1,11 @@
 module.exports = function(grunt){
   grunt.config('uglify', {
     options: {
-      banner: '<%= banner.banner %>'
+      banner: '<%= banner.banner %>',
+      mangle: true,
+      compress: true,
+      preserveComments: false,
+      screwIE8: true
     },
     dist: {
       files: {
@@ -9,6 +13,9 @@ module.exports = function(grunt){
           '<%= dir.srcJs %>/**/*.js',
           '!<%= dir.srcJs %>/modernizr.js',
           '!<%= dir.srcJs %>/**/*.min.js',
+        ],
+        '<%= dir.srcJs %>/modernizr.min.js' : [
+          '<%= dir.srcJs %>/modernizr.js'
         ]
       },
     },

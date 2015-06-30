@@ -7,13 +7,12 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/{{ site.name }}.min.css">
-    <script src="/js/modernizr.js"></script>
+    <script src="/js/modernizr.min.js"></script>
   </head>
   {% include categories.html %}
   {% include tags.html %}
   <body class="{{ categories }} {{ tags }}">
     {% include svg-defs.html %}
     {% include nav-primary.html %}
-    <div class="wrap-outer">
-      <div class="wrap-inner">
-        {{ test }}
+    <div class="wrap_outer">
+      <div class="wrap_inner">

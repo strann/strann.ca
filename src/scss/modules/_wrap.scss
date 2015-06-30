@@ -1,0 +1,16 @@
+.wrap {
+  &_inner {
+    padding-left: 50px;
+    transition: all $global-transition-duration ease;
+
+    &.js-nav-primary--is-active {
+      overflow-x: hidden;
+      padding-left: 0;
+      transform: translateX(50vw);
+
+      @media (min-width: 720px) {
+        transform: translateX(25vw);
+      }
+    }
+  }
+}
