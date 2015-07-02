@@ -1,4 +1,4 @@
-;(function(strann, undefined){
+(function(strann){
   var navEl = document.querySelector('.nav--primary');
   var wrapEl = document.querySelector('.wrap_inner');
   var activeClass = 'js-nav-primary--is-active';

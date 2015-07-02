@@ -4,8 +4,7 @@ module.exports = function(grunt){
       banner: '<%= banner.banner %>',
       mangle: true,
       compress: true,
-      preserveComments: false,
-      screwIE8: true
+      preserveComments: false
     },
     dist: {
       files: {
