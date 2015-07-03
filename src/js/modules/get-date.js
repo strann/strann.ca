@@ -4,6 +4,8 @@
 
     var date = {
       currentHour: currentDate.getHours(),
+      currentMinutes: currentDate.getMinutes(),
+      currentSeconds: currentDate.getSeconds(),
       currentWeekday: currentDate.getDay(),
       currentDay: currentDate.getDate(),
       currentMonth: currentDate.getMonth() + 1,
