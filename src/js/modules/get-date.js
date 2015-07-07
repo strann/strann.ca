@@ -8,7 +8,7 @@
       currentSeconds: currentDate.getSeconds(),
       currentWeekday: currentDate.getDay(),
       currentDay: currentDate.getDate(),
-      currentMonth: currentDate.getMonth() + 1,
+      currentMonth: currentDate.getMonth(),
       currentYear: currentDate.getFullYear(),
       fullDate: currentDate.toDateString()
     };
