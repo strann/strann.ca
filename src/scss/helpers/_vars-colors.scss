@@ -24,5 +24,6 @@ $colors: (
 
 // Link colors
 
-$color-link: color(grey, 70);
-$color-link--hover: color(grey, 30);
+$color-link: $black;
+$color-link--hover: color(grey, 80);
+$color-link--visited: color(grey, 40);

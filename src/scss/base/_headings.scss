@@ -1,5 +1,3 @@
-// Headings Base
-
 @for $i from 1 through 6 {
   h#{$i} {
     margin: 0;
@@ -7,37 +5,38 @@
 }
 
 h1 {
-  font-size: $global-heading-font-size;
-  line-height: $global-heading-line-height * 1.1;
-  margin-bottom: $global-heading-margin-bottom;
+  font-size: ms(5);
+  line-height: ms(5);
+  margin-bottom: ms(4);
 }
 
 h2 {
-  font-size: $global-heading-font-size / 1.1875;
-  line-height: $global-heading-line-height;
-  margin-bottom: $global-heading-margin-bottom / 1.1875;
+  font-size: ms(4);
+  line-height: ms(4);
+  margin-bottom: ms(3);
+  text-shadow: 1px 1px 0 pink;
 }
 
 h3 {
-  font-size: $global-heading-font-size / 1.5833;
-  line-height: $global-heading-line-height;
-  margin-bottom: $global-heading-margin-bottom / 1.5833;
+  font-size: ms(3);
+  line-height: ms(3);
+  margin-bottom: ms(2);
 }
 
 h4 {
-  font-size: $global-heading-font-size / 2.111;
-  line-height: $global-heading-line-height;
-  margin-bottom: $global-heading-margin-bottom / 2.111;;
+  font-size: ms(2);
+  line-height: ms(2);
+  margin-bottom: ms(1);
 }
 
 h5 {
-  font-size: $global-heading-font-size / 2.375;
-  line-height: $global-heading-line-height;
-  margin-bottom: $global-heading-margin-bottom / 2.375;;
+  font-size: ms(1);
+  line-height: ms(1);
+  margin-bottom: ms(0);
 }
 
 h6 {
-  font-size: $global-heading-font-size / 2.5333;
-  line-height: $global-heading-line-height;
-  margin-bottom: $global-heading-margin-bottom / 2.5333;
+  font-size: ms(0);
+  line-height: ms(0);
+  margin-bottom: ms(0);
 }

@@ -1,13 +1,17 @@
+// External
+
+@import '../../external/modular-scale/stylesheets/modular-scale';
+
 // Helpers - Functions
 
 @import 'helpers/function-color';
 
 // Helpers - Variables
 
+@import 'helpers/vars-modular-scale';
 @import 'helpers/vars-colors';
 @import 'helpers/vars-dimensions';
 @import 'helpers/vars-line-styles';
-@import 'helpers/vars-typography';
 @import 'helpers/vars-animation';
 
 // Helpers - Placeholders
@@ -23,11 +27,12 @@
 // Base styles
 
 @import 'base/fonts';
-@import 'base/setup';
+@import 'base/html';
+@import 'base/universal';
 @import 'base/body';
 @import 'base/headings';
 @import 'base/svg';
-@import 'base/links';
+@import 'base/anchor';
 @import 'base/buttons';
 @import 'base/lists';
 @import 'base/tables';
@@ -35,7 +40,6 @@
 @import 'base/code';
 @import 'base/tabs';
 @import 'base/dropdowns';
-@import 'base/misc-elements';
 
 // Modules
 

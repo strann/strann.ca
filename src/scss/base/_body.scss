@@ -1,4 +1,7 @@
 body {
   font-family: Roboto, sans-serif;
-  font-size: 1.4rem;
+  font-kerning: normal;
+  font-size: ms(0);
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
 }

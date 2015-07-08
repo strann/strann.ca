@@ -1,12 +1,13 @@
-// Links Base
-
 a {
   color: $color-link;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color $global-transition-duration ease;
-
 
   &:hover {
     color: $color-link--hover;
+  }
+
+  &:visited {
+    color: $color-link--visited;
   }
 }
