@@ -67,15 +67,23 @@
   font-style: "italic";
   font-weight: 300;
   src: local(Roboto), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/7m8l7TlFO-S3VkhHuR0at7rIa-7acMAeDBVuclsi6Gc.woff) format("woff"); }
-* {
-  box-sizing: border-box; }
-
 html {
+  box-sizing: border-box;
   font-size: 62.5%; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
 
 body {
   font-family: Roboto, sans-serif;
-  font-size: 1.4rem; }
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  font-size: 1.4rem;
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility; }
 
 h1 {
   margin: 0; }
@@ -96,34 +104,35 @@ h6 {
   margin: 0; }
 
 h1 {
-  font-size: 3.8rem;
-  line-height: 1.1;
-  margin-bottom: 3.8rem; }
+  font-size: 10.63125rem;
+  line-height: 10.63125rem;
+  margin-bottom: 7.0875rem; }
 
 h2 {
-  font-size: 3.2rem;
-  line-height: 1;
-  margin-bottom: 3.2rem; }
+  font-size: 7.0875rem;
+  line-height: 7.0875rem;
+  margin-bottom: 4.725rem;
+  text-shadow: 1px 1px 0 pink; }
 
 h3 {
-  font-size: 2.40005rem;
-  line-height: 1;
-  margin-bottom: 2.40005rem; }
+  font-size: 4.725rem;
+  line-height: 4.725rem;
+  margin-bottom: 3.15rem; }
 
 h4 {
-  font-size: 1.80009rem;
-  line-height: 1;
-  margin-bottom: 1.80009rem; }
+  font-size: 3.15rem;
+  line-height: 3.15rem;
+  margin-bottom: 2.1rem; }
 
 h5 {
-  font-size: 1.6rem;
-  line-height: 1;
-  margin-bottom: 1.6rem; }
+  font-size: 2.1rem;
+  line-height: 2.1rem;
+  margin-bottom: 1.4rem; }
 
 h6 {
-  font-size: 1.50002rem;
-  line-height: 1;
-  margin-bottom: 1.50002rem; }
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  margin-bottom: 1.4rem; }
 
 .icon-svg-defs {
   height: 0;
@@ -134,11 +143,13 @@ h6 {
   width: 0; }
 
 a {
-  color: #444444;
-  text-decoration: none;
+  color: #111;
+  text-decoration: underline;
   transition: color 200ms ease; }
   a:hover {
-    color: #aaaaaa; }
+    color: #373737; }
+  a:visited {
+    color: #919191; }
 
 ul,
 ol,
