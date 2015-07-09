@@ -1,42 +1,47 @@
 @for $i from 1 through 6 {
   h#{$i} {
     margin: 0;
+    text-shadow: 1px 1px 0 color(heading, text-shadow);
   }
 }
 
 h1 {
   font-size: ms(5);
-  line-height: ms(5);
-  margin-bottom: ms(4);
+  line-height: ms(6);
+  margin-bottom: ms(3);
 }
 
 h2 {
   font-size: ms(4);
-  line-height: ms(4);
-  margin-bottom: ms(3);
-  text-shadow: 1px 1px 0 pink;
+  letter-spacing: tracking(ms(4), -20);
+  line-height: ms(5);
+  margin-bottom: ms(2);
 }
 
 h3 {
   font-size: ms(3);
-  line-height: ms(3);
+  letter-spacing: tracking(ms(3), -20);
+  line-height: ms(4);
   margin-bottom: ms(2);
 }
 
 h4 {
   font-size: ms(2);
-  line-height: ms(2);
+  letter-spacing: tracking(ms(2), -20);
+  line-height: ms(3);
   margin-bottom: ms(1);
 }
 
 h5 {
   font-size: ms(1);
-  line-height: ms(1);
+  letter-spacing: tracking(ms(1), -20);
+  line-height: ms(2);
   margin-bottom: ms(0);
 }
 
 h6 {
   font-size: ms(0);
-  line-height: ms(0);
+  letter-spacing: tracking(ms(0), -20);
+  line-height: ms(1);
   margin-bottom: ms(0);
 }

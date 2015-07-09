@@ -17,6 +17,14 @@ $colors-base: map-colors((
   )
 ));
 
+// Theme
+
+$colors-theme: map-colors((
+  theme: (
+    00: pink,
+  )
+));
+
 // Base elements
 
 $colors-elements: map-colors((
@@ -31,6 +39,14 @@ $colors-elements: map-colors((
     base: color(darkest),
     hover: color(grey, 80),
     visited: color(grey, 70)
+  )
+));
+
+// Headings
+
+$colors-headings: map-colors((
+  heading: (
+    text-shadow: color(theme, 00)
   )
 ));
 
