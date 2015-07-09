@@ -77,6 +77,7 @@ html {
   box-sizing: inherit; }
 
 body {
+  color: #181818;
   font-family: Roboto, sans-serif;
   -webkit-font-kerning: normal;
           font-kerning: normal;
@@ -143,13 +144,13 @@ h6 {
   width: 0; }
 
 a {
-  color: #111;
+  color: #181818;
   text-decoration: underline;
   transition: color 200ms ease; }
   a:hover {
-    color: #373737; }
+    color: #262626; }
   a:visited {
-    color: #919191; }
+    color: #333333; }
 
 ul,
 ol,
@@ -161,9 +162,9 @@ li {
   list-style: none; }
 
 code {
-  background-color: #f7f7f7;
+  background-color: #666666;
   border-radius: 4px;
-  box-shadow: 1px 1px 1px #777777;
+  box-shadow: 1px 1px 1px #666666;
   display: inline-block;
   font-family: Inconsolata;
   padding: 4px 8px; }
@@ -186,7 +187,7 @@ code {
 .icon {
   transition: fill 200ms ease; }
   .icon-hamburger {
-    fill: #111;
+    fill: #181818;
     height: 30px;
     width: 30px; }
     .js-nav-primary--is-active .icon-hamburger {
@@ -195,7 +196,7 @@ code {
 .nav {
   margin: 0; }
   .nav--primary {
-    background-color: #111;
+    background-color: #181818;
     height: 100%;
     left: 0;
     padding-top: 60px;
@@ -241,5 +242,6 @@ code {
       visibility: visible; }
   .nav_link {
     display: block;
-    color: #fff;
     padding: 5px 10px 5px 20px; }
+    .nav_link, .nav_link:visited {
+      color: #fff; }
