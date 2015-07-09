@@ -1,29 +1,57 @@
-// Color Variables
+// Base
 
-// Base colors
-
-$white: #fff;
-$black: #111;
-
-// Palette
-
-$colors: (
+$colors-base: map-colors((
+  lightest: #fff,
+  darkest: lighten(#000, 9.5%),
   grey: (
-    00: lighten($black, 90%),
-    10: lighten($black, 80%),
-    20: lighten($black, 70%),
-    30: lighten($black, 60%),
-    40: lighten($black, 50%),
-    50: lighten($black, 40%),
-    60: lighten($black, 30%),
-    70: lighten($black, 20%),
-    80: lighten($black, 15%),
-    90: lighten($black, 10%)
+    00: lighten(#000, 90%),
+    10: lighten(#000, 80%),
+    20: lighten(#000, 70%),
+    30: lighten(#000, 60%),
+    40: lighten(#000, 50%),
+    50: lighten(#000, 40%),
+    60: lighten(#000, 30%),
+    70: lighten(#000, 20%),
+    80: lighten(#000, 15%),
+    90: lighten(#000, 10%)
   )
-);
+));
 
-// Link colors
+// Base elements
 
-$color-link: $black;
-$color-link--hover: color(grey, 80);
-$color-link--visited: color(grey, 40);
+$colors-elements: map-colors((
+  page: (
+    base: color(lightest),
+    text: (
+      base: color(darkest),
+      reverse: color(lightest)
+    )
+  ),
+  link: (
+    base: color(darkest),
+    hover: color(grey, 80),
+    visited: color(grey, 70)
+  )
+));
+
+// Icons
+
+$colors-icons: map-colors((
+  icon: (
+    hamburger: (
+      base: color(darkest),
+      active: color(lightest)
+    )
+  )
+));
+
+// Nav
+
+$colors-nav: map-colors((
+  nav: (
+    primary: (
+      base: color(darkest),
+      link: color(lightest)
+    )
+  )
+));

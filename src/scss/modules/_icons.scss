@@ -2,12 +2,12 @@
   transition: fill $global-transition-duration ease;
 
   &-hamburger {
-    fill: $black;
+    fill: color(icon, hamburger);
     height: 30px;
     width: 30px;
 
     .js-nav-primary--is-active & {
-      fill: $white;
+      fill: color(icon, hamburger, active);
     }
   }
 }

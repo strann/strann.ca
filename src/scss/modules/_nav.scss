@@ -2,7 +2,7 @@
   margin: 0;
 
   &--primary {
-    background-color: $black;
+    background-color: color(nav, primary);
     height: 100%;
     left: 0;
     padding-top: 60px;
@@ -50,8 +50,12 @@
 
   &_link {
     display: block;
-    color: $white;
     padding: $global-padding / 4 $global-padding / 2 $global-padding / 4 $global-padding;
+
+    &,
+    &:visited {
+      color: color(nav, primary, link);
+    }
   }
 }
 
