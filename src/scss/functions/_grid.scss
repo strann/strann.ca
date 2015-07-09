@@ -1,0 +1,25 @@
+//**
+//
+// A function to return a grid pixel width
+//
+// @param number  $columns  The number of grid columns you wish to return
+// @param number  $gutters  The number of grid gutters you wish to return
+//
+// @returns number  A pixel value based on how many $columns and/or $gutters are passed to grid()
+//
+//*/
+
+$global-column: 67px;
+$global-gutter: 20px;
+
+@function grid($columns: 1, $gutters: 0) {
+  @if type-of($columns) == number && type-of($gutters) == number {
+    @if $columns != 0 {
+      @return ($columns * $global-column) + (($columns - 1) * $global-gutter) + ($gutters * $global-gutter);
+    } @else {
+      @return $gutters * $global-gutter;
+    }
+  } @else {
+    @warn 'The value of #{$columns} and #{$gutters} must be a number.';
+  }
+}

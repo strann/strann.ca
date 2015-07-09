@@ -4,7 +4,13 @@
 
 // Helpers - Functions
 
-@import 'helpers/function-color';
+@import 'functions/map-fetch';
+@import 'functions/map-has-key-recursive';
+@import 'functions/map-keys-recursive';
+@import 'functions/map-colors';
+@import 'functions/color';
+@import 'functions/grid';
+@import 'functions/tracking';
 
 // Helpers - Variables
 

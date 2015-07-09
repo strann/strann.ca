@@ -1,0 +1,45 @@
+//**
+//
+// A function to return a color value from a map of unknown depth
+//
+// @param {arglist} $keys...  List of color keys to traverse
+//
+// @return {string} $value    Color value
+//
+//*/
+
+@function color($keys...) {
+
+  // Traverse over parameters until a value is found
+  // in the $global-colors map, then store in $value
+
+  $value: map-fetch($global-colors, $keys...);
+
+  // If $value is a map, then the parameters passed to
+  // color() do not go deep enough to find a color
+  // value. Check if the map has a key of `base`, if
+  // so set $value to the value of the `base` key.
+  //
+  // This allows for more concise color assignment, such as:
+  // color: color(page, text);
+  //
+  // For map:
+  //
+  // page: (
+  //  text: (
+  //    base: #fff,
+  //    reverse: #000
+  //  )
+  // )
+
+  @if (type-of($value) == map) {
+    @if (map-has-key($value, base)) {
+      $value: map-get($value, base);
+    }
+  }
+
+  @return $value;
+
+  @warn 'Unknown `#{$key}` in $map';
+  @return null;
+}

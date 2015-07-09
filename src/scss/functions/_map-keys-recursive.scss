@@ -1,0 +1,22 @@
+//**
+//
+// A recursive version of the map-keys function
+//
+// @param {map}   $map      A map to traverse
+//
+// @return {list} $key-list A list of map keys
+//
+//*/
+
+@function map-keys-recursive($map) {
+  $key-list: ();
+
+  @each $key, $val in $map {
+    $key-list: join($key-list, $key, comma);
+
+    @if type-of($val) == map {
+      $key-list: join($key-list, map-keys-recursive($val));
+    }
+  }
+  @return $key-list;
+}

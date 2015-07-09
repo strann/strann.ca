@@ -1,0 +1,22 @@
+//**
+//
+// A function to return a letter-spacing value based on Photoshop tracking
+//
+// @param {number} $font-size     Font-size value
+// @param {number} $tracking-val  Tracking value from Photoshop, eg: -25
+//
+// @return {string} $value    Color value
+//
+//*/
+
+@function tracking($font-size, $tracking-val) {
+  @if (type-of($font-size) != number) {
+    @error '`$font-size: #{$font-size}` must be a number';
+  }
+
+  @if (type-of($tracking-val) == number) {
+    @return ($font-size * $tracking-val) / 1000;
+  } @else {
+    @error '`$tracking-val: #{$tracking-val}` must be a number';
+  }
+}

@@ -1,0 +1,20 @@
+//**
+//
+// Fetch value from map - http://goo.gl/3FL2QS
+//
+// @param {map}     $map  A map to fetch value from
+// @param {arglist} $keys A list of keys to traverse
+//
+// @return {string | false}
+//
+//*/
+
+@function map-fetch($map, $keys...) {
+  $result: $map;
+
+  @each $key in $keys {
+    $result: type-of($result) == 'map' and map-has-key($result, $key) and map-get($result, $key) or false;
+  }
+
+  @return $result;
+}

@@ -1,0 +1,98 @@
+//**
+//
+// A function to build a color map, currently supports merging 2 levels deep
+//
+// @param {map} $map  A map of color keys/values
+// @todo Errors/warnings
+// @todo Make this a true recursive merge function
+//
+// @return {map}
+//
+//*/
+
+// Set the global color var here so its available for
+// any theme if needed
+
+$global-colors: ();
+
+@function map-colors($map) {
+  $diff-map: ();
+  $diff-sub-map: ();
+  $diff-merge: false;
+  $stored-key: null;
+  $stored-map: ();
+  $stored-sub-map: null;
+
+  @each $key, $value in $map {
+    $stored-key: $key;
+
+    // Check if the $global-colors map already has a key
+    // from the map that will be merged
+
+    @if map-has-key($global-colors, $stored-key) {
+
+      // Store references to the map being passed in
+      // and the corresponding global map
+
+      $this-map: map-get($map, $stored-key);
+      $stored-map: map-get($global-colors, $stored-key);
+
+      // Loop over the map being passed in and check
+      // to see if any of the keys don't exist in the
+      // global map
+
+      @each $this-key, $this-value in $this-map {
+
+        // Check if any values in the map are maps themselves and
+        // if the corresponding key exists in stored-map, then
+        // merge any missing keys into the diff-map
+        //
+        // @todo This is where recursion is needed
+
+        $stored-sub-map: map-get($stored-map, $this-key);
+
+        @if type-of($this-value) == map and $stored-sub-map != null {
+          @each $k, $v in $this-value {
+            @if not map-has-key($stored-sub-map, $k) {
+              $diff-sub-map: map-merge($diff-sub-map, ($k: $v));
+            }
+          }
+          $diff-sub-map: map-merge($diff-sub-map, $stored-sub-map);
+          $diff-map: map-merge($diff-map, ($this-key: $diff-sub-map));
+        }
+
+        @if not map-has-key($stored-map, $this-key) {
+
+          // If a key doesn't exist in the global map, store
+          // the diffs in a map
+
+          $diff-map: map-merge($diff-map, ($this-key: $this-value));
+        }
+      }
+
+      // Merge the map containing any missing keys with the
+      // global map, which is in $global-colors
+
+      $stored-map: map-merge($stored-map, $diff-map);
+
+      // Set $diff-merge to true so we know to merge the new map
+      // containing the stored global pairs + any that were missing
+
+      $diff-merge: true;
+    }
+  }
+
+  // If we need to merge the map diffs, do so. Otherwise just
+  // merge the entire passed in $map into the global map
+
+  @if $diff-merge == true {
+    $global-colors: map-merge($global-colors, ($stored-key: $stored-map)) !global;
+  } @else {
+    $global-colors: map-merge($global-colors, $map) !global;
+  }
+
+  // Return the passed in $map so it can be stored in
+  // a map variable wherever map-colors() is called
+
+  @return $map;
+}

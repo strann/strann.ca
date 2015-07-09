@@ -1,0 +1,25 @@
+//**
+//
+// A recursive version of the map-has-keys function
+// https://gist.github.com/mturjak/9042651
+//
+// @param {map}     $map  A map to traverse
+// @param {string}  $key  A key to match in the map
+//
+// @return {boolean}
+//
+//*/
+
+@function map-has-key-recursive($map, $key){
+  @if type-of($map) == map {
+    @if map-has-key($map, $key) {
+      @return true;
+    }
+    @each $this-key, $this-val in $map {
+      @if map-has-key-recursive($this-val, $key) {
+        @return true;
+      }
+    }
+  }
+  @return false;
+}
