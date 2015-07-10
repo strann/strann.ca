@@ -1,7 +1,6 @@
 module.exports = function(grunt){
   grunt.config('uglify', {
     options: {
-      banner: '<%= banner.banner %>',
       mangle: true,
       compress: true,
       preserveComments: false

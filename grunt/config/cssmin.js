@@ -2,7 +2,6 @@ module.exports = function(grunt){
   grunt.config('cssmin', {
     combine: {
       options: {
-        banner: '<%= banner.banner %>',
         report: 'gzip'
       },
       expand: true,
